@@ -9,11 +9,21 @@
     font-size: 40px;
     font-weight: 700;
     color: $colorGreyHeading;
+
+    @media screen and (max-width: $mobileThreshold) {
+        font-size: 28px;
+        line-height: 42px;
+    }
 }
 
 @mixin sectionParagraph {
     font-size: 18px;
     color: $colorGreyHeading;
+
+    @media screen and (max-width: $mobileThreshold) {
+        font-size: 15px;
+        line-height: 26px;
+    }
 }
 
 @mixin shorterParagraph {

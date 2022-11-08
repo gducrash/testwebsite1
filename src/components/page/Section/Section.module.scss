@@ -2,9 +2,21 @@
 @import "../../../util/mixins.scss";
 
 
+$sectionPaddingCompensation: 32px*2;
+
 .section-content {
-    @include fillWidthUntil(1120px);
+
+    @include fillWidthUntil(1120px + $sectionPaddingCompensation);
+    @include borderBox;
+
     margin: auto;
+    padding: 0 32px;
+
+    &.nopadding {
+        @include fillWidthUntil(1120px);
+        padding: 0;
+    }
+
 }
 
 .split {
@@ -19,10 +31,11 @@
 
 .section-hero {
 
-    @include flex(column, flex-end);
+    @include borderBox;
+    padding-top: 240px;
 
     background: $colorLightBg;
-    height: 900px;
+    min-height: 900px;
 
     .hero-left {
 
@@ -117,4 +130,54 @@
 .section-scroll {
     background: $colorBrightRed;
     height: 650px;
+}
+
+@media screen and (max-width: $mobileThreshold) {
+
+    $sectionPaddingCompensation: 18px*2;
+
+    .split {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .section-hero {
+
+        min-height: 982px;
+        gap: 50px;
+
+        .hero-left {
+            align-items: stretch;
+        }
+        .hero-right {
+            align-items: stretch;
+        }
+
+    }
+
+    .section-content {
+        @include fillWidthUntil($mobileWidth + $sectionPaddingCompensation);
+        padding: 0 18px;
+    }
+
+    .section-main {
+
+        gap: 100px;
+
+        .contact {
+
+            .left {
+                gap: 20px;
+            }
+
+            .right {
+                width: 100%;
+                height: unset;
+            }
+
+        }
+
+    }
+    
 }

@@ -50,3 +50,12 @@
     }
 
 }
+
+@media screen and (max-width: $mobileThreshold) {
+    
+    .button.shrink {
+        padding: 0 24px;
+        font-size: 12px;
+    }
+
+}

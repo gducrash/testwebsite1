@@ -10,12 +10,17 @@
     left: 0;
     width: 100%;
 
+    &.mobile .navbar-content {
+        margin: 0 18px;
+    }
+
     .navbar-content {
         
         @include fillWidthUntil(1280px);
         @include flex(row, space-between, center);
 
         padding: 32px 0;
+        margin: 0 32px;
         border-bottom: 4px solid $colorGreyHeading;
 
     }

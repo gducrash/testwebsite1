@@ -36,7 +36,9 @@ const SectionMain = () => {
                 </div>
             </div>
 
-            <div className={classes["section-content"]}>
+            <div className={constructClass([
+                classes["section-content"], classes["nopadding"]
+            ])}>
                 <FormBox
                     heading="Get Started Today!"
                     description={"Learn more about how you can save our planet's nature. "

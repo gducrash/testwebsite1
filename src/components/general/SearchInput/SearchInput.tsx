@@ -18,7 +18,7 @@ const SearchInput = (props: SearchInputProps) => {
                 draggable="false" 
             />
             <input type="text" placeholder={props.placeholder ?? placeholderDefault} />
-            <Button text="Search" />
+            <Button text="Search" shrink />
         </div>
     );
 }

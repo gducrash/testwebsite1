@@ -2,6 +2,7 @@ import classes from './Navbar.module.scss';
 import logo from '../../../assets/logo.svg';
 import { constructClass } from '../../../scripts/util';
 import Button from '../../general/Button/Button';
+import useResponsive from '../../../hooks/useResponsive';
 
 type NavbarProps = {
     menuItems: {
@@ -11,18 +12,11 @@ type NavbarProps = {
 }
 
 const Navbar = (props: NavbarProps) => {
-    return (
-        <header className={classes['navbar']}>
-        <div className={classes['navbar-content']}>
-            
-            <div className={classes['navbar-content-section']}>
-                <img 
-                    className={classes['navbar-logo']}
-                    src={logo} draggable="false"
-                    alt="Rootz Logo" 
-                />
-            </div>
 
+    const isMobile = useResponsive(1110);
+
+    const navbarSections = {
+        desktop: <>
             <div className={classes['navbar-content-section']}>
                 { props.menuItems.map((m, i) => 
                     <a 
@@ -37,10 +31,36 @@ const Navbar = (props: NavbarProps) => {
             <div className={classes['navbar-content-section']}>
                 <Button text={props.button} white navbar />
             </div>
+        </>,
+
+        mobile: <>
+            <div className={classes['navbar-content-section']}>
+                <Button text={props.button} white navbar />
+            </div>
+        </>
+    }
+
+    return (
+        <header className={constructClass([
+            classes['navbar'],
+            isMobile ? classes['mobile'] : null
+        ])}>
+        <div className={classes['navbar-content']}>
+            
+            <div className={classes['navbar-content-section']}>
+                <img 
+                    className={classes['navbar-logo']}
+                    src={logo} draggable="false"
+                    alt="Rootz Logo" 
+                />
+            </div>
+
+            { navbarSections[isMobile ? 'mobile' : 'desktop'] }
 
         </div>
         </header>
     );
+
 }
 
 export default Navbar;

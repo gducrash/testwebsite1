@@ -73,3 +73,50 @@
     }
 
 }
+
+
+@media screen and (max-width: $mobileThreshold) {
+    
+    .footer {
+        .footer-content {
+
+            padding: 43px 30px;
+            flex-wrap: wrap;
+
+            .footer-section {
+
+                flex: 1;
+
+                &:first-child {
+                    width: 100%;
+                }
+
+                &:last-child {
+                    margin-left: 20px;
+                }
+
+                h2 {
+                    margin-bottom: 0;
+                }
+        
+                h4 {
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                }
+
+            }
+
+            .footer-socials {
+
+                justify-content: flex-start;
+
+                .footer-social-icon {
+                    margin-right: 13px;
+                }
+
+            }
+
+        }
+    }
+
+}
