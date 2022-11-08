@@ -1,0 +1,75 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.footer {
+
+    @include flex(row, center);
+
+    height: 340px;
+    background: $colorLightBg;
+
+    .footer-content {
+        @include fillWidthUntil(1120px);
+        @include flex(row, space-around);
+
+        padding: 96px 0;
+    }
+
+    .footer-section {
+
+        color: $colorFooterText;
+
+        h2 {
+            @include fontWeightBold;
+            font-size: 34px;
+            line-height: 48px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        h4 {
+            @include fontWeightBold;
+            font-size: 20px;
+            line-height: 32px;
+            margin-top: 11px;
+            margin-bottom: 37px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+    }
+
+    .footer-socials {
+
+        @include hsplit;
+
+        .footer-social-icon {
+
+            @include flex(row, center, center);
+            @include round;
+            @include clickable;
+            @include easeOutTransition(background);
+
+            background: $colorFooterText;
+            width: 32px;
+            height: 32px;
+            margin-right: 16px;
+
+            &.twitter:hover {
+                background: $colorBrandTwitter;
+            }
+            &.facebook:hover {
+                background: $colorBrandFacebook;
+            }
+            &.linkedin:hover {
+                background: $colorBrandLinkedIn;
+            }
+
+        }
+
+    }
+
+}

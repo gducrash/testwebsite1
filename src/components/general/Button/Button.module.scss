@@ -1,0 +1,52 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.button {
+
+    @include removeDefaultStyle;
+    @include clickable;
+    @include fontWeightSemibold;
+    @include easeOutTransition((background, color, translate));
+    @include accentButton;
+
+    border-radius: 100px;
+    padding: 0 48px;
+    height: 48px;
+
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &.white {
+
+        background: white;
+        color: black;
+
+        &:hover {
+            background: black;
+            color: white;
+        }
+        &:active {
+            background: black;
+            color: darken(white, 25%);
+        }
+        
+    }
+
+    &.navbar-button {
+
+        @include fontWeightBold;
+        font-size: 16px;
+        text-transform: none;
+        letter-spacing: normal;
+
+        &:hover {
+            translate: 0 -2px;
+        }
+        &:active {
+            translate: 0 1px;
+        }
+
+    }
+
+}

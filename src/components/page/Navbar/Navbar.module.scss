@@ -1,0 +1,44 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.navbar {
+
+    @include flex(row, center);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .navbar-content {
+        
+        @include fillWidthUntil(1280px);
+        @include flex(row, space-between, center);
+
+        padding: 32px 0;
+        border-bottom: 4px solid $colorGreyHeading;
+
+    }
+
+    .navbar-content-section {
+
+        @include flex;
+
+        a {
+            @include removeLinkStyle;
+            @include paragraphRegular;
+
+            padding: 8px 50px;
+
+            &.selected {
+                @include fontWeightBold;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+    }
+
+}

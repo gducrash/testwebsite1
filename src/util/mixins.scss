@@ -1,0 +1,105 @@
+@import './variables.scss';
+
+@mixin paragraphRegular {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+@mixin sectionHeading {
+    font-size: 40px;
+    font-weight: 700;
+    color: $colorGreyHeading;
+}
+
+@mixin sectionParagraph {
+    font-size: 18px;
+    color: $colorGreyHeading;
+}
+
+@mixin shorterParagraph {
+    width: 91%;
+}
+
+@mixin fontWeightRegular {
+    font-weight: 400;
+}
+
+@mixin fontWeightSemibold {
+    font-weight: 600;
+}
+
+@mixin fontWeightBold {
+    font-weight: 700;
+}
+
+
+@mixin removeDefaultStyle {
+    border: none;
+    background: none;
+}
+
+@mixin removeLinkStyle {
+    text-decoration: none;
+    color: black;
+}
+
+@mixin clickable {
+    cursor: pointer;
+    user-select: none;
+}
+
+@mixin round {
+    border-radius: 100px;
+}
+
+@mixin borderBox {
+    box-sizing: border-box;
+}
+
+
+@mixin hsplit ($gap: 0, $flex: unset) {
+    display: flex;
+    justify-content: space-between;
+    flex: $flex;
+    gap: $gap;
+
+    > * {
+        width: 100%;
+    }
+}
+
+@mixin flex ($direction: unset, $justifyContent: unset, $alignItems: unset, $gap: unset) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    gap: $gap;
+}
+
+
+@mixin easeOutTransition ($prop: all, $time: 0.35s) {
+    transition-property: $prop;
+    transition-duration: $time;
+    transition-timing-function: cubic-bezier(.13,.5,.01,1);
+}
+
+@mixin fillWidthUntil ($maxWidth) {
+    width: 100%;
+    max-width: $maxWidth;
+}
+
+
+@mixin accentButton {
+
+    background: $colorAccent;
+    color: white;
+
+    &:hover {
+        background: $colorRed;
+        color: $colorGreyHeading;
+    }
+    &:active {
+        background: darken($colorAccent, 10%);
+    }
+
+}

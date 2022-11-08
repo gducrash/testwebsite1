@@ -1,0 +1,71 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.form-box-wrap {
+
+    @include flex(row, center, center);
+    @include borderBox;
+
+    height: 560px;
+    border-radius: 20px;
+    padding: 80px;
+    background: $colorBrightRed;
+
+    .left {
+
+        @include flex(column, center, unset, 40px);
+
+        margin-right: 125px;
+        color: $colorGreyText;
+
+        h2 {
+            @include sectionHeading;
+        }
+        p {
+            @include sectionParagraph;
+            @include shorterParagraph;
+        }
+
+    }
+
+}
+
+.form-box {
+
+    @include flex(column, unset, stretch, 16px);
+    @include borderBox;
+
+    padding: 40px 55px;
+    border-radius: 16px;
+    background: $colorLightBg;
+    min-width: 420px;
+
+    input {
+
+        @include removeDefaultStyle;
+        @include round;
+
+        padding: 12px 24px;
+        background: white;
+        font-size: 14px;
+
+        &::placeholder {
+            color: $colorHintText
+        }
+
+    }
+
+    h3 {
+        @include fontWeightSemibold;
+        color: $colorGreyHeading;
+        font-size: 32px;
+        text-align: center;
+        line-height: 56px;
+        margin-bottom: 24px;
+    }
+
+    button {
+        margin-top: 16px;
+    }
+
+}

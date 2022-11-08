@@ -1,0 +1,30 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.search-input-wrapper {
+    @include round;
+    @include borderBox;
+    @include flex(row, unset, center, 13px);
+
+    height: 64px;
+    background: white;
+    padding: 8px;
+
+    input {
+        @include removeDefaultStyle;
+        @include fontWeightRegular;
+        
+        font-size: 14px;
+        height: 100%;
+        width: 280px;
+
+        &::placeholder {
+            color: $colorHintText;
+        }
+    }
+
+    .search-input-icon {
+        height: 20px;
+        margin-left: 10px;
+    }
+}

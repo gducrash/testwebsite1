@@ -1,0 +1,120 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+
+.section-content {
+    @include fillWidthUntil(1120px);
+    margin: auto;
+}
+
+.split {
+    @include hsplit;
+}
+
+.center {
+    @include flex(column, unset, center, 16px);
+    width: 100%;
+}
+
+
+.section-hero {
+
+    @include flex(column, flex-end);
+
+    background: $colorLightBg;
+    height: 900px;
+
+    .hero-left {
+
+        @include flex(column, unset, flex-start, 48px);
+
+        h1 {
+            @include fontWeightBold;
+            font-size: 96px;
+            line-height: 1.1;
+            color: $colorGreyHeading;
+        }
+
+    }
+
+    .hero-right {
+
+        @include flex(column, unset, flex-end);
+
+        img {
+            border-radius: 32px;
+        }
+
+    }
+
+}
+
+.section-main {
+
+    @include flex(column, unset, center);
+    padding: 200px 0;
+    gap: 200px;
+
+    .section-content {
+        .center {
+            > h2 {
+                @include sectionHeading;
+                margin-bottom: 16px;
+            }
+        
+            > p {
+                @include sectionParagraph;
+                max-width: 350px;
+                text-align: center;
+                margin-bottom: 64px;
+            }
+        }
+    } 
+
+    .contact {
+        
+        .split {
+            gap: 100px;
+        }
+
+        .left {
+
+            @include flex(column, unset, flex-start);
+
+            gap: 40px;
+            
+            h2 {
+                @include sectionHeading;
+            }
+            p {
+                @include sectionParagraph;
+                @include shorterParagraph;
+            }
+            button {
+                margin-top: 16px;
+            }
+
+        }
+
+        .right {
+            flex-shrink: 0;
+            width: 540px;
+            height: 340px;
+        }
+
+    }
+
+    .bust {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+}
+
+.section-scroll {
+    background: $colorBrightRed;
+    height: 650px;
+}

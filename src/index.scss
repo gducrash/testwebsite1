@@ -1,0 +1,26 @@
+@import "./util/variables.scss";
+@import "./util/mixins.scss";
+
+* {
+    font-family: $fontDefault;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include paragraphRegular;
+    @include fontWeightRegular;
+
+    background: white;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: $colorAccent;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
