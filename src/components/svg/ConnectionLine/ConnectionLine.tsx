@@ -37,7 +37,7 @@ const ConnectionLine = (props: ConnectionLineProps) => {
                 style={{ animationDelay: props.delay ? props.delay + "s" : undefined }}
             />
             <path 
-                d={paths.CONNECTION_LINE} 
+                d={paths.CONNECTION_LINE} strokeWidth="2"
                 stroke="white" strokeDasharray={dashThickness}
             />
         </motion.svg>
