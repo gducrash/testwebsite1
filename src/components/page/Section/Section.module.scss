@@ -110,7 +110,7 @@ $sectionPaddingCompensation: 32px*2;
         .connection-line {
 
             position: absolute;
-            width: 370px;
+            width: $teamLineSizeDesktop;
             z-index: -10;
 
             &.one {
@@ -230,7 +230,7 @@ $sectionPaddingCompensation: 32px*2;
 
             .connection-line {
 
-                width: 230px;
+                width: $teamLineSizeMobile;
     
                 &.one {
                     left: unset;

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import classes from './ConnectionLine.module.scss';
 import paths from '../paths';
 
@@ -20,7 +20,10 @@ const ConnectionLine = (props: ConnectionLineProps) => {
         else svgRef.current.classList.remove(classes['vis']);
     }
 
-    const dashThickness = props.mobile ? "7 7" : "4 4"
+    useEffect(() =>
+        onVisChange({ opacity: 1 }), []);
+
+    const dashThickness = props.mobile ? "7 7" : "4 4";
 
     return (
         <motion.svg
