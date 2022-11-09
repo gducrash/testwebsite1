@@ -1,0 +1,18 @@
+.connection-path {
+    stroke-dasharray: 600;
+	stroke-dashoffset: 600;
+}
+
+.vis .connection-path {
+    animation: lineDraw 1s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lineDraw {
+    from {
+        stroke-dashoffset: 600;
+    }
+    to {
+		stroke-dashoffset: 0;
+	}
+}

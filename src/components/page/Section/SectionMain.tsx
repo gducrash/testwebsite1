@@ -1,33 +1,43 @@
-import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
+import { useScroll } from "framer-motion";
 import useParallax from "../../../hooks/useParallax";
+import useResponsive from "../../../hooks/useResponsive";
 import { constructClass } from '../../../scripts/util';
 import strings from "../../../util/strings";
+import classes from './Section.module.scss';
+
+import BlobImage from "../../general/BlobImage/BlobImage";
 import Button from '../../general/Button/Button';
 import FormBox from '../../general/FormBox/FormBox';
 import QuestionList from '../../general/QuestionList/QuestionList';
 import ScrollTriggered from "../../general/ScrollTriggeredDiv/ScrollTriggered";
-import classes from './Section.module.scss';
+
+import ConnectionLine from "../../svg/ConnectionLine/ConnectionLine";
+
 
 const SectionMain = () => {
 
-    const ref = useRef() as any;
-
+    const scrollTargetRef = useRef() as any;
     const { scrollYProgress } = useScroll({
-        target: ref,
+        target: scrollTargetRef,
         offset: ["start end", "end start"]
     });
-
     const parallax = [
         useParallax(scrollYProgress, -50), 
-        useParallax(scrollYProgress, -200), 
-        useParallax(scrollYProgress, -100)
+        useParallax(scrollYProgress, -130), 
+        useParallax(scrollYProgress, 50)
     ];
+
+    const isMobile = useResponsive(1110);
+    const blobSize = isMobile ? 200 : 350;
+
 
     return (
         <section className={classes["section-main"]} id="team">
             
-            <div className={classes["section-content"]}>
+            <div className={constructClass([
+                classes["section-content"], classes["team"]
+            ])}>
                 <div className={classes["center"]}>
                     <ScrollTriggered type="h2" delay={0.1}>
                         { strings.SECTION_TEAM_HEADING }
@@ -36,26 +46,42 @@ const SectionMain = () => {
                         { strings.SECTION_TEAM_DESC }
                     </ScrollTriggered>
                 </div>
-                <div className={classes["split"]} ref={ref}>
+                <div className={classes["split"]} ref={scrollTargetRef}>
                     
-                    <motion.div 
-                        className={classes["bust"]} 
-                        style={{
-                            y: parallax[0],
-                            backgroundImage: "url('https://cdn.discordapp.com/attachments/898519611018997760/1039255399448203364/unknown.png')"
-                        }} />
-                    <motion.div 
-                        className={classes["bust"]} 
-                        style={{
-                            y: parallax[1],
-                            backgroundImage: "url('https://memepedia.ru/wp-content/uploads/2022/05/viktor-korneplod-mem-shablon.jpg')"
-                        }} />
-                    <motion.div 
-                        className={classes["bust"]} 
-                        style={{
-                            y: parallax[2],
-                            backgroundImage: "url('https://media.discordapp.net/attachments/510776441084968977/1033290230742126592/ezgif.com-gif-maker.gif')"
-                        }} />
+                    <BlobImage 
+                        variation={1}
+                        width={blobSize}
+                        height={blobSize}
+                        parallax={parallax[0]}
+                        image={"url('https://cdn.discordapp.com/attachments/898519611018997760/1039255399448203364/unknown.png')"}
+                        className={classes["bust1"]}
+                    />
+                    <BlobImage 
+                        variation={2}
+                        width={blobSize}
+                        height={blobSize}
+                        parallax={parallax[1]}
+                        image={"url('https://memepedia.ru/wp-content/uploads/2022/05/viktor-korneplod-mem-shablon.jpg')"}
+                        className={classes["bust2"]}
+                    />
+                    <BlobImage 
+                        variation={3}
+                        width={blobSize}
+                        height={blobSize}
+                        parallax={parallax[2]}
+                        image={"url('https://media.discordapp.net/attachments/510776441084968977/1033290230742126592/ezgif.com-gif-maker.gif')"} 
+                        className={classes["bust3"]}
+                    />
+
+                    { ["one", "two"].map((m, i) => 
+
+                        // make two connection line svgs, 
+                        // one with class "one" and one with class "two"
+                        <ConnectionLine className={constructClass([
+                            classes["connection-line"], classes[m]
+                        ])} mobile={isMobile} delay={0.5*i} key={i} />
+
+                    ) }
 
                 </div>
             </div>
