@@ -14,9 +14,9 @@ const HeroTitle = (props: HeroTitleProps) => {
             className={props.className}
             width="543" height="293" viewBox="0 0 543 293" fill="none" 
         >
-            <g stroke="#222433" fill="#222433" fillOpacity={0} stroke-dasharray="100 100" className={classes['draw-path']}>
+            <g stroke="#222433" fill="#222433" fillOpacity={0} className={classes['draw-path']}>
                 ${ paths.HERO_TITLE.map((m, i) =>
-                    <path d={m} className={classes["offset-"+i]} />
+                    <path d={m} className={classes["offset-"+i]} key={i} />
                 ) }
             </g>
         </svg>

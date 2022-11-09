@@ -17,6 +17,7 @@ const ScrollTriggered = (props: ScrollTriggeredDivProps) => {
     let elem;
     let elemProps: any = {...props};
 
+    delete elemProps.once;
     elemProps.variants    = variants;
     elemProps.initial     = "hidden"; 
     elemProps.whileInView = "visible";
