@@ -12,13 +12,13 @@ type FooterSectionProps = {
 const FooterSection = (props: FooterSectionProps) => {
 
     return (
-        <footer className={classes['footer-section']}>
+        <div className={classes['footer-section']}>
             { props.type == FooterHeadingType.BIG 
                 ? <h2>{ props.heading }</h2>
                 : <h4>{ props.heading }</h4>
             }
             { props.children }
-        </footer>
+        </div>
     )
 
 }

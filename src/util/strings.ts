@@ -46,7 +46,7 @@ const strings = {
 
     footer: [{
         heading: "Contacts",
-        content: "2019 Rootz Foundation. All rights reserved"
+        content: "2019 Rootz Foundation. \nAll rights reserved"
     }, {
         heading: "Headquarters",
         content: "1234 Taliban \nLos Angeles, La 1234567 \n(123) 456-7890"

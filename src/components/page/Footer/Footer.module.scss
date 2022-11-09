@@ -20,6 +20,7 @@
         color: $colorFooterText;
         font-size: 13px;
         line-height: 24px;
+        white-space: pre-line;
 
         h2 {
             @include fontWeightBold;
@@ -77,26 +78,25 @@
     .footer {
         .footer-content {
 
+            @include fillWidthUntil($mobileWidth);
             padding: 43px 30px;
-            flex-wrap: wrap;
+            flex-direction: column;
+
+            .footer-row {
+                @include flex(row, space-between, flex-start, 42px)
+            }
 
             .footer-section {
 
-                flex: 1;
-
-                &:first-child {
-                    width: 100%;
-                }
-
-                &:last-child {
-                    margin-left: 20px;
-                }
+                white-space: normal;
 
                 h2 {
+                    font-size: 28px;
                     margin-bottom: 0;
                 }
         
                 h4 {
+                    font-size: 18px;
                     margin-top: 0;
                     margin-bottom: 15px;
                 }
