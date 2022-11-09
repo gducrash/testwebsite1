@@ -11,8 +11,11 @@ import Button from '../../general/Button/Button';
 import FormBox from '../../general/FormBox/FormBox';
 import QuestionList from '../../general/QuestionList/QuestionList';
 import ScrollTriggered from "../../general/ScrollTriggeredDiv/ScrollTriggered";
-
 import ConnectionLine from "../../svg/ConnectionLine/ConnectionLine";
+
+import imgTeam1 from "../../../assets/team/team1.png";
+import imgTeam2 from "../../../assets/team/team2.png";
+import imgTeam3 from "../../../assets/team/team3.png";
 
 
 const SectionMain = () => {
@@ -53,7 +56,7 @@ const SectionMain = () => {
                         width={blobSize}
                         height={blobSize}
                         parallax={parallax[0]}
-                        image={"url('https://cdn.discordapp.com/attachments/898519611018997760/1039255399448203364/unknown.png')"}
+                        image={imgTeam1}
                         className={classes["bust1"]}
                     />
                     <BlobImage 
@@ -61,7 +64,7 @@ const SectionMain = () => {
                         width={blobSize}
                         height={blobSize}
                         parallax={parallax[1]}
-                        image={"url('https://memepedia.ru/wp-content/uploads/2022/05/viktor-korneplod-mem-shablon.jpg')"}
+                        image={imgTeam2}
                         className={classes["bust2"]}
                     />
                     <BlobImage 
@@ -69,7 +72,7 @@ const SectionMain = () => {
                         width={blobSize}
                         height={blobSize}
                         parallax={parallax[2]}
-                        image={"url('https://media.discordapp.net/attachments/510776441084968977/1033290230742126592/ezgif.com-gif-maker.gif')"} 
+                        image={imgTeam3} 
                         className={classes["bust3"]}
                     />
 

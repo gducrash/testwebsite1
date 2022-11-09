@@ -22,7 +22,7 @@ const BlobImage = (props: BlobImageProps) => {
             style={{
                 y: props.parallax,
                 width: props.width, height: props.height,
-                backgroundImage: props.image
+                backgroundImage: `url(${props.image})`
             }}
         />
     )
