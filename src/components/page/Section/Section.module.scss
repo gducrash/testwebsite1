@@ -53,11 +53,18 @@ $sectionPaddingCompensation: 32px*2;
     .hero-right {
 
         @include flex(column, unset, flex-end);
+        position: relative;
 
         img {
             border-radius: 32px;
         }
 
+    }
+
+    .hero-image {
+        position: absolute;
+        top: $parrotYOffsetDesktop;
+        right: $parrotXOffsetDesktop;
     }
 
 }
@@ -144,14 +151,28 @@ $sectionPaddingCompensation: 32px*2;
 
     .section-hero {
 
+        padding-top: 177px;
         min-height: 982px;
         gap: 50px;
+        position: relative;
+        margin-bottom: $parrotYOffsetMobile;
 
         .hero-left {
             align-items: stretch;
+
+            h1 {
+                font-size: 60px;
+            }
         }
         .hero-right {
-            align-items: stretch;
+            position: absolute;
+            bottom: $parrotYOffsetMobile * -1;
+            right: $parrotXOffsetMobile * -1;
+        }
+        .hero-image {
+            position: unset;
+            top: unset;
+            right: unset;
         }
 
     }
@@ -164,6 +185,7 @@ $sectionPaddingCompensation: 32px*2;
     .section-main {
 
         gap: 100px;
+        padding: 100px 0;
 
         .contact {
 
