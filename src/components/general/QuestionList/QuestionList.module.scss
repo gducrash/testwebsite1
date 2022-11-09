@@ -46,6 +46,7 @@ $animMaxHeightMobile: 160px;
     .question-expand-button {
         @include flex(row, center, center);
         @include easeOutTransition((background, color));
+        @include removeDefaultStyle;
         @include round;
         @include clickable;
         @include accentButton;

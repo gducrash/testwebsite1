@@ -25,7 +25,7 @@ const QuestionItem = (props: QuestionItemProps) => {
                 <p>{ props.children }</p>
             </div>
 
-            <div 
+            <button 
                 className={classes["question-expand-button"]}
                 onClick={props.onClick}
             >
@@ -33,7 +33,7 @@ const QuestionItem = (props: QuestionItemProps) => {
                     src={props.expanded ? icCollapse : icExpand} 
                     alt="Hide answer" draggable="false" 
                 />
-            </div>
+            </button>
 
         </div>
     );
