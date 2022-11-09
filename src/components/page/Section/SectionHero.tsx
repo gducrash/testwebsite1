@@ -20,7 +20,7 @@ const SectionHero = () => {
     />
 
     return (
-        <section className={classes["section-hero"]}>
+        <section className={classes["section-hero"]} id="home">
 
             <ScrollTriggered className={classes["section-content"]}>
                 <div className={classes["split"]}>

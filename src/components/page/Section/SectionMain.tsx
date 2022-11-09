@@ -25,7 +25,7 @@ const SectionMain = () => {
     ];
 
     return (
-        <section className={classes["section-main"]}>
+        <section className={classes["section-main"]} id="team">
             
             <div className={classes["section-content"]}>
                 <div className={classes["center"]}>
@@ -62,7 +62,7 @@ const SectionMain = () => {
 
             <ScrollTriggered delay={0.2} once className={constructClass([
                 classes["section-content"], classes["nopadding"]
-            ])}>
+            ])} id="mission">
                 <FormBox
                     heading={strings.FORM_WRAP_HEADING}
                     description={strings.FORM_WRAP_DESC}
