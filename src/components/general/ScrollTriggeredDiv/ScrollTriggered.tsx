@@ -31,11 +31,14 @@ const ScrollTriggered = (props: ScrollTriggeredDivProps) => {
 
     switch (props.type) {
 
-        case 'h1':  elem = <motion.h1  {...elemProps} />; break;
-        case 'h2':  elem = <motion.h2  {...elemProps} />; break;
-        case 'p':   elem = <motion.p   {...elemProps} />; break;
-        case 'img': elem = <motion.img {...elemProps} />; break;
-        default:    elem = <motion.div {...elemProps} />; break;
+        case 'h1':     elem = <motion.h1  {...elemProps} />; break;
+        case 'h2':     elem = <motion.h2  {...elemProps} />; break;
+        case 'h3':     elem = <motion.h3  {...elemProps} />; break;
+        case 'h4':     elem = <motion.h4  {...elemProps} />; break;
+        case 'p':      elem = <motion.p   {...elemProps} />; break;
+        case 'img':    elem = <motion.img {...elemProps} />; break;
+        case 'button': elem = <motion.button {...elemProps} />; break;
+        default:       elem = <motion.div {...elemProps} />; break;
 
     }
 
