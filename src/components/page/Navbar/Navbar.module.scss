@@ -9,9 +9,17 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 100;
 
     &.mobile .navbar-content {
         margin: 0 18px;
+    }
+
+    &.fixed {
+        position: fixed;
+        backdrop-filter: blur(15px);
+        background: #fffa;
+        animation: navbarFixedAppear 0.3s cubic-bezier(0.1, 0.6, 0.1, 1);
     }
 
     .navbar-content {
@@ -46,4 +54,14 @@
 
     }
 
+}
+
+
+@keyframes navbarFixedAppear {
+    0% {
+        translate: 0 -100px;
+    }
+    100% {
+        translate: 0;
+    }
 }
