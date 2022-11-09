@@ -2,6 +2,7 @@ import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import useParallax from "../../../hooks/useParallax";
 import { constructClass } from '../../../scripts/util';
+import strings from "../../../util/strings";
 import Button from '../../general/Button/Button';
 import FormBox from '../../general/FormBox/FormBox';
 import QuestionList from '../../general/QuestionList/QuestionList';
@@ -28,8 +29,12 @@ const SectionMain = () => {
             
             <div className={classes["section-content"]}>
                 <div className={classes["center"]}>
-                    <ScrollTriggered type="h2" delay={0.1}>Our Top Team</ScrollTriggered>
-                    <ScrollTriggered type="p"  delay={0.2}>Learn more about how you can save our planet's nature.</ScrollTriggered>
+                    <ScrollTriggered type="h2" delay={0.1}>
+                        { strings.SECTION_TEAM_HEADING }
+                    </ScrollTriggered>
+                    <ScrollTriggered type="p"  delay={0.2}>
+                        { strings.SECTION_TEAM_DESC }
+                    </ScrollTriggered>
                 </div>
                 <div className={classes["split"]} ref={ref}>
                     
@@ -59,15 +64,13 @@ const SectionMain = () => {
                 classes["section-content"], classes["nopadding"]
             ])}>
                 <FormBox
-                    heading="Get Started Today!"
-                    description={"Learn more about how you can save our planet's nature. "
-                    + "From smart consumption to switching to renewable energy, "
-                    + "each of us can do our part to save the planet."}
-                    formTitle="Log In"
-                    formButton="Book a demo"
+                    heading={strings.FORM_WRAP_HEADING}
+                    description={strings.FORM_WRAP_DESC}
+                    formTitle={strings.FORM_TITLE}
+                    formButton={strings.FORM_BUTTON}
                 >
-                    <input type="text"  placeholder="Name"  spellCheck='false' />
-                    <input type="email" placeholder="Email" spellCheck='false' />
+                    <input type="text"  placeholder={strings.FORM_NAME}  spellCheck='false' />
+                    <input type="email" placeholder={strings.FORM_EMAIL} spellCheck='false' />
                 </FormBox>
             </ScrollTriggered>
 
@@ -76,39 +79,27 @@ const SectionMain = () => {
             ])}>
                 <div className={classes["split"]}>
 
-                    <ScrollTriggered className={classes["left"]} delay={0.2}>
-                        <h2>Ready to Get started?</h2>
-                        <p>
-                            When pattern is mentioned in interior design, it is easy to 
-                            associate it with a geometric patterned wallpaper or 
-                            colourful prints on interior fabrics.
-                        </p>
-                        <Button text="Contact Us" />
-                    </ScrollTriggered>
+                    <div className={classes["left"]}>
 
-                    <ScrollTriggered className={classes["right"]} delay={0.3}>
+                        <ScrollTriggered type="h2" delay={0.2}>
+                            { strings.SECTION_CONTACT_HEADING }
+                        </ScrollTriggered>
+
+                        <ScrollTriggered type="p" delay={0.25}>
+                            { strings.SECTION_CONTACT_DESC }
+                        </ScrollTriggered>
+
+                        <ScrollTriggered delay={0.3}>
+                            <Button text={strings.SECTION_CONTACT_BUTTON} />
+                        </ScrollTriggered>
+
+                    </div>
+
+                    <ScrollTriggered className={classes["right"]} delay={0.4}>
 
                         <QuestionList
                             selected={0}
-                            items={[{
-                                title: "What can I do to protect our planet?",
-
-                                content: "Not to make an open fire in nature and to clean up litter; " 
-                                + "not to pollute open water bodies; to switch to alternative "
-                                + "energy sources; to reduce the use of non-renewable resources"
-                            }, {
-                                title: "How to save nature ecology?",
-
-                                content: "Not to make an open fire in nature and to clean up litter; " 
-                                + "not to pollute open water bodies; to switch to alternative "
-                                + "energy sources; to reduce the use of non-renewable resources"
-                            }, {
-                                title: "What is nature conservation?",
-
-                                content: "Not to make an open fire in nature and to clean up litter; " 
-                                + "not to pollute open water bodies; to switch to alternative "
-                                + "energy sources; to reduce the use of non-renewable resources"
-                            }]}
+                            items={strings.questions}
                         />
 
                     </ScrollTriggered>

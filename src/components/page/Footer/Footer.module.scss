@@ -18,6 +18,8 @@
     .footer-section {
 
         color: $colorFooterText;
+        font-size: 13px;
+        line-height: 24px;
 
         h2 {
             @include fontWeightBold;
@@ -33,11 +35,6 @@
             line-height: 32px;
             margin-top: 11px;
             margin-bottom: 37px;
-        }
-
-        p {
-            font-size: 13px;
-            line-height: 24px;
         }
 
     }

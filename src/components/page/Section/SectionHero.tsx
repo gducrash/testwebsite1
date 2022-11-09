@@ -1,4 +1,5 @@
 import classes from './Section.module.scss';
+import strings from '../../../util/strings';
 import SearchInput from '../../general/SearchInput/SearchInput';
 import ScrollTriggered from '../../general/ScrollTriggeredDiv/ScrollTriggered';
 
@@ -9,7 +10,7 @@ const SectionHero = () => {
     </ScrollTriggered>;
 
     const animatedParagraph = <ScrollTriggered type="p" delay={0.2}>
-        The scale of the challenges facing our planet can seem daunting, but we can all do something.
+        { strings.HERO }
     </ScrollTriggered>
 
     const animatedImage = <ScrollTriggered 

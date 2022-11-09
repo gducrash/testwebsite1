@@ -17,9 +17,7 @@ const FooterSection = (props: FooterSectionProps) => {
                 ? <h2>{ props.heading }</h2>
                 : <h4>{ props.heading }</h4>
             }
-            <p>
-                { props.children }
-            </p>
+            { props.children }
         </footer>
     )
 
