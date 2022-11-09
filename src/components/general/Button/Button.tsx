@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { constructClass } from '../../../scripts/util';
 import classes from './Button.module.scss';
 
@@ -16,10 +17,17 @@ const Button = (props: ButtonProps) => {
         props.shrink ? classes['shrink'] : null
     ]);
 
+    const stateHover = props.navbar ? { y: -1 } : {} 
+    const statePressed = props.navbar ? { y: 1 } : { scale: 0.975 }
+
     return (
-        <button className={buttonClass}>
+        <motion.button 
+            className={buttonClass}
+            whileHover={stateHover}
+            whileTap={statePressed}
+        >
             {props.text}
-        </button>
+        </motion.button>
     );
 }
 
