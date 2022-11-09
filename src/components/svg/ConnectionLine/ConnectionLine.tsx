@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import classes from './ConnectionLine.module.scss';
 import paths from '../paths';
+import { isInView } from '../../../scripts/util';
 
 type ConnectionLineProps = {
     className?: string,
@@ -21,7 +22,7 @@ const ConnectionLine = (props: ConnectionLineProps) => {
     }
 
     useEffect(() =>
-        onVisChange({ opacity: 1 }), []);
+        onVisChange({ opacity: isInView(svgRef) }), []);
 
     const dashThickness = props.mobile ? "7 7" : "4 4";
 
