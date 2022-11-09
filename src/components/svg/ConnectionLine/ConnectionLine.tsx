@@ -33,12 +33,12 @@ const ConnectionLine = (props: ConnectionLineProps) => {
             <path 
                 className={classes['connection-path']}
                 opacity="0.8" d={paths.CONNECTION_LINE} 
-                stroke="black" stroke-dasharray={dashThickness}
+                stroke="black" strokeDasharray={dashThickness}
                 style={{ animationDelay: props.delay ? props.delay + "s" : undefined }}
             />
             <path 
                 d={paths.CONNECTION_LINE} 
-                stroke="white" stroke-dasharray={dashThickness}
+                stroke="white" strokeDasharray={dashThickness}
             />
         </motion.svg>
     )
