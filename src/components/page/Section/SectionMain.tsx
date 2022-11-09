@@ -60,7 +60,7 @@ const SectionMain = () => {
                 </div>
             </div>
 
-            <ScrollTriggered delay={0.2} className={constructClass([
+            <ScrollTriggered delay={0.2} once className={constructClass([
                 classes["section-content"], classes["nopadding"]
             ])}>
                 <FormBox
@@ -81,21 +81,21 @@ const SectionMain = () => {
 
                     <div className={classes["left"]}>
 
-                        <ScrollTriggered type="h2" delay={0.2}>
+                        <ScrollTriggered type="h2" delay={0.2} once>
                             { strings.SECTION_CONTACT_HEADING }
                         </ScrollTriggered>
 
-                        <ScrollTriggered type="p" delay={0.25}>
+                        <ScrollTriggered type="p" delay={0.25} once>
                             { strings.SECTION_CONTACT_DESC }
                         </ScrollTriggered>
 
-                        <ScrollTriggered delay={0.3}>
+                        <ScrollTriggered delay={0.3} once>
                             <Button text={strings.SECTION_CONTACT_BUTTON} />
                         </ScrollTriggered>
 
                     </div>
 
-                    <ScrollTriggered className={classes["right"]} delay={0.4}>
+                    <ScrollTriggered className={classes["right"]} delay={0.4} once>
 
                         <QuestionList
                             selected={0}

@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 
 type ScrollTriggeredDivProps = {
     type?: string,
-    delay?: number
+    delay?: number,
+    once?: boolean,
     [key: string]: any
 }
 
@@ -19,6 +20,9 @@ const ScrollTriggered = (props: ScrollTriggeredDivProps) => {
     elemProps.variants    = variants;
     elemProps.initial     = "hidden"; 
     elemProps.whileInView = "visible";
+    elemProps.viewport = {
+        once: props.once
+    }
     elemProps.transition  = { 
         ease: "backOut", 
         duration: 0.5, 
