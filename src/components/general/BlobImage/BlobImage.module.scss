@@ -1,0 +1,17 @@
+$variations: "1", "2", "3", "4", "5", "6";
+
+.blob {
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+@each $v in $variations {
+    .variation-#{$v} {
+        -webkit-mask-image: url("../../../assets/blobs/animated-blob-#{$v}.svg");
+        mask-image: url("../../../assets/blobs/animated-blob-#{$v}.svg");
+    }
+}
