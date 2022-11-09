@@ -9,9 +9,6 @@
 }
 
 @keyframes lineDraw {
-    from {
-        stroke-dashoffset: 600;
-    }
     to {
 		stroke-dashoffset: 0;
 	}

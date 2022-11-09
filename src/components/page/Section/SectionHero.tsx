@@ -2,12 +2,14 @@ import classes from './Section.module.scss';
 import strings from '../../../util/strings';
 import SearchInput from '../../general/SearchInput/SearchInput';
 import ScrollTriggered from '../../general/ScrollTriggeredDiv/ScrollTriggered';
+import imgHeroTitle from '../../../assets/hero-title.svg';
 import imgParrot from '../../../assets/parrot.svg';
+import HeroTitle from '../../svg/HeroTitle/HeroTitle';
 
 const SectionHero = () => {
 
-    const animatedHeading = <ScrollTriggered type="h1" delay={0.1}>
-        Nature Needs You
+    const animatedHeading = <ScrollTriggered delay={0.1}>
+        <HeroTitle className={classes["hero-title"]} />
     </ScrollTriggered>;
 
     const animatedParagraph = <ScrollTriggered type="p" delay={0.2}>

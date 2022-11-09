@@ -41,11 +41,8 @@ $sectionPaddingCompensation: 32px*2;
 
         @include flex(column, unset, flex-start, 48px);
 
-        h1 {
-            @include fontWeightBold;
-            font-size: 96px;
-            line-height: 1.1;
-            color: $colorGreyHeading;
+        .hero-title {
+            height: 290px;
         }
 
     }
@@ -189,9 +186,10 @@ $sectionPaddingCompensation: 32px*2;
 
         .hero-left {
             align-items: stretch;
+            gap: 30px;
 
-            h1 {
-                font-size: 60px;
+            .hero-title {
+                height: unset;
             }
         }
         .hero-right {
