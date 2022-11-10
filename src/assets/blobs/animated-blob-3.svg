@@ -1,5 +1,5 @@
 <svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <path fill="#000" transform="translate(-20 -18.6)">
+    <path fill="#fff" transform="translate(-20 -18.6)">
         <animate attributeName="d" dur="20s" repeatCount="indefinite" calcMode="spline"
             values="
             M397.5,300.5Q384,361,332,414.5Q280,468,202.5,453Q125,438,78,377Q31,316,48,246Q65,
