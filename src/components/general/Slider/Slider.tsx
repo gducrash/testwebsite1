@@ -103,6 +103,7 @@ const Slider = (props: SliderProps) => {
 
     useResize(updateChildrenXStyle);
     useAnimationFrame(updateChildrenXStyle);
+    setTimeout(() => updateChildrenXStyle, 100);
 
     return (
         <>
