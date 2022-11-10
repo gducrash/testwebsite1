@@ -1,0 +1,128 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.slider-wrapper {
+
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.slider-content {
+
+    display: flex;
+
+    .slider-item {
+        flex-shrink: 0;
+        width: 80vw;
+    }
+
+}
+
+.slider-element-body {
+
+    @include flex(column, flex-start, center);
+
+    position: relative;
+    width: 90%;
+    aspect-ratio: 1/1;
+    color: white;
+
+    .slider-element-content {
+
+        @include flex(column, center, center, 8px);
+
+        z-index: 10;
+        text-align: center;
+        margin-top: calc(50% - 24px);
+        width: 80%;
+
+        > * {
+            transition: 0.3s ease-out all;
+        }
+
+        h4 {
+            @include fontWeightSemibold;
+            font-size: 24px;
+        }
+        p {
+            opacity: 0;
+            translate: 0 -24px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+    }
+
+    .slider-element-bg, .slider-element-fg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    .slider-element-fg {
+        filter: brightness(80%);
+        transition: filter 0.25s ease;
+    }
+
+    .slider-element-bg * {
+        stroke: 2;
+    }
+
+    &.active {
+
+        color: $colorGreyText;
+
+        .slider-element-content p {
+            opacity: 1;
+            translate: 0
+        }
+
+        .slider-element-fg {
+            height: 100%;
+            width: 100%;
+            filter: none;
+        }
+
+    }
+
+}
+
+.slider-controls {
+
+    @include flex(row, center, center, 40px);
+    color: #00000033;
+
+    span {
+        color: black;
+    }
+
+    button {
+        @include flex(column, center);
+        @include removeDefaultStyle;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: $mobileThreshold) {
+
+    .slider-element-body {
+        .slider-element-content {
+
+            width: 60%;
+    
+            h4 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 15px;
+                line-height: 20px;
+            }
+    
+        }
+    }
+
+}

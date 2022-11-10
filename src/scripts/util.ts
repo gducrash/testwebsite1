@@ -14,3 +14,11 @@ export function isInView (elem: React.MutableRefObject<any>) {
     const screenY = elem.current?.getBoundingClientRect().y ?? 0;
     return screenY > 0 && screenY < window.innerHeight;
 }
+
+export function mod (n: number, m: number) {
+    return ((n % m) + m) % m;
+}
+
+export function distanceFromZero (val: number, factor: number = 1) {
+    return 1 - Math.abs(val) * 2 * factor;
+}

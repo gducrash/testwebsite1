@@ -4,7 +4,8 @@ import classes from './BlobImage.module.scss';
 
 type BlobImageProps = {
     variation: number,
-    width: number, height: number,
+    width?: number|string, height?: number|string,
+    aspectRatio?: string,
     image: string,
     className?: string,
     parallax?: MotionValue
@@ -22,6 +23,7 @@ const BlobImage = (props: BlobImageProps) => {
             style={{
                 y: props.parallax,
                 width: props.width, height: props.height,
+                aspectRatio: props.aspectRatio,
                 backgroundImage: `url(${props.image})`
             }}
         />

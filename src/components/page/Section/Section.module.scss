@@ -162,8 +162,9 @@ $sectionPaddingCompensation: 32px*2;
 }
 
 .section-scroll {
+    @include flex(column, center, center, 32px);
     background: $colorBrightRed;
-    height: 650px;
+    padding: 100px 0;
 }
 
 @media screen and (max-width: $mobileThreshold) {
