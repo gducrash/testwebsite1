@@ -103,7 +103,6 @@ const Slider = (props: SliderProps) => {
 
     useResize(updateChildrenXStyle);
     useAnimationFrame(updateChildrenXStyle);
-    setTimeout(() => updateChildrenXStyle, 100);
 
     return (
         <>
@@ -112,6 +111,7 @@ const Slider = (props: SliderProps) => {
                 className={classes["slider-content"]}
                 drag="x" transition={trs}
                 animate={{ x: calcSliderX() }}
+                onViewportEnter={updateChildrenXStyle}
                 
                 // when spring anim is complete
                 // if the scrollIndex is out of bounds, wrap it back 
