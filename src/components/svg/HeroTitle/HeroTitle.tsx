@@ -2,9 +2,7 @@ import classes from './HeroTitle.module.scss';
 import paths from '../paths';
 
 type HeroTitleProps = {
-    className?: string,
-    mobile?: boolean,
-    delay?: number
+    className?: string
 }
 
 const HeroTitle = (props: HeroTitleProps) => {

@@ -1,0 +1,50 @@
+.body {
+
+    scale: 1.1;
+
+    &.over {
+
+        .leaf1 {
+            transform-origin: bottom left;
+            animation: leaf1Hover 0.5s ease;
+        }
+
+        .leaf2 {
+            transform-origin: bottom left;
+            animation: leaf2Hover 0.5s ease;
+            animation-delay: 0.1s;
+        }
+
+    }
+
+}
+
+@keyframes leaf1Hover {
+    0% {
+        rotate: 0;
+    }
+    32% {
+        rotate: -5deg;
+    }
+    60% {
+        rotate: 2deg;
+    }
+    100% {
+        rotate: 0;
+    }
+}
+
+@keyframes leaf2Hover {
+    0% {
+        rotate: 0;
+    }
+    30% {
+        rotate: -2deg;
+    }
+    50% {
+        rotate: 1deg;
+    }
+    100% {
+        rotate: 0;
+    }
+}

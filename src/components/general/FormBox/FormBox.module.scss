@@ -39,6 +39,7 @@
     border-radius: 16px;
     background: $colorLightBg;
     min-width: 420px;
+    position: relative;
 
     input {
 
@@ -66,6 +67,12 @@
 
     button {
         margin-top: 16px;
+    }
+
+    .form-deco {
+        position: absolute;
+        right: $leafDecoOffsetX * -1;
+        top: $leafDecoOffsetY * -1;
     }
 
 }
