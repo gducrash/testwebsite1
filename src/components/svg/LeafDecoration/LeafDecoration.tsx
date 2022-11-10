@@ -20,7 +20,7 @@ const LeafDecoration = (props: LeafDecorationProps) => {
             ])}
             onMouseEnter={() => {
                 setMouseOver(false);
-                setTimeout(() => setMouseOver(true), 10);
+                setTimeout(() => setMouseOver(true), 100);
             }}
             width="61" height="96" viewBox="0 0 61 96" 
         >
