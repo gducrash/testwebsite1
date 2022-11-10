@@ -10,7 +10,7 @@ import BlobImage from "../../general/BlobImage/BlobImage";
 import Button from '../../general/Button/Button';
 import FormBox from '../../general/FormBox/FormBox';
 import QuestionList from '../../general/QuestionList/QuestionList';
-import ScrollTriggered from "../../general/ScrollTriggeredDiv/ScrollTriggered";
+import ScrollTriggered from "../../general/ScrollTriggered/ScrollTriggered";
 import ConnectionLine from "../../svg/ConnectionLine/ConnectionLine";
 
 import imgTeam1 from "../../../assets/team/team1.png";
