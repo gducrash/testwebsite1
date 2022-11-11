@@ -1,6 +1,7 @@
-import classes from './MemberCounter.module.scss';
 import { useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import classes from './MemberCounter.module.scss';
+import strings from '../../../util/strings';
 import { constructClass, formatCount } from '../../../scripts/util';
 import ScrollTriggered from '../ScrollTriggered/ScrollTriggered';
 
@@ -36,7 +37,7 @@ export const MemberCounter = (props: MemberCounterProps) => {
         >
             <img src={icHealth} alt="Member Counter Icon" draggable="false" />
             <div className={classes["members-counter-content"]}>
-                <h4>Members</h4>
+                <h4>{ strings.HERO_MEMBERS }</h4>
                 <h2 ref={counterRef}>{ formatCount(props.targetCount) }</h2>
             </div>
         </ScrollTriggered>

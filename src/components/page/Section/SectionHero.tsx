@@ -51,7 +51,7 @@ const SectionHero = () => {
                     </div>
 
                     <MemberCounter 
-                        targetCount={29128}  visible={isHeroVisible}
+                        targetCount={strings.HERO_MEMBER_COUNT}  visible={isHeroVisible}
                         delay={counterCardDelay}
                     />
                 </div>

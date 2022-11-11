@@ -9,6 +9,8 @@ const strings = {
     NAVBAR_BUTTON: "Apply",
 
     HERO: "The scale of the challenges facing our planet can seem daunting, but we can all do something.",
+    HERO_MEMBERS: "Members",
+    HERO_MEMBER_COUNT: 29128,
 
     SECTION_TEAM_HEADING: "Our Top Team",
     SECTION_TEAM_DESC: "Learn more about how you can save our planet's nature.",
@@ -45,7 +47,7 @@ const strings = {
     }],
 
     SLIDER_HEADINGS: [
-        "Save walter", "Plant trees", "Save energy", "Avoid plastic", "Choose organic"
+        "Save water", "Plant trees", "Save energy", "Avoid plastic", "Choose organic"
     ],
     SLIDER_CONTENT: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
 
