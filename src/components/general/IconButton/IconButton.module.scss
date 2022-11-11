@@ -1,0 +1,7 @@
+@import "../../../util/mixins.scss";
+
+.icon-button {
+    @include removeDefaultStyle;
+    @include clickable;
+    @include flex(column, center);
+}
