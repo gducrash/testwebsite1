@@ -1,8 +1,8 @@
 @import "../../../util/variables.scss";
 
 .draw-path * {
-    stroke-dasharray: 600;
-	stroke-dashoffset: 600;
+    stroke-dasharray: 620;
+	stroke-dashoffset: 620;
     animation: lineDraw 2s ease;
     animation-fill-mode: forwards;
 }
