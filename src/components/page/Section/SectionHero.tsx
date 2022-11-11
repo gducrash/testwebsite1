@@ -4,6 +4,7 @@ import SearchInput from '../../general/SearchInput/SearchInput';
 import ScrollTriggered from '../../general/ScrollTriggered/ScrollTriggered';
 import imgParrot from '../../../assets/parrot.svg';
 import HeroTitle from '../../svg/HeroTitle/HeroTitle';
+import MemberCounter from '../../general/MemberCounter/MemberCounter';
 
 const SectionHero = () => {
 
@@ -39,6 +40,8 @@ const SectionHero = () => {
                         { animatedImage }
                         
                     </div>
+
+                    <MemberCounter />
                 </div>
             </div>
 

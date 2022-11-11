@@ -11,6 +11,7 @@ $sectionPaddingCompensation: 32px*2;
 
     margin: auto;
     padding: 0 32px;
+    position: relative;
 
     &.nopadding {
         @include fillWidthUntil(1120px);
@@ -51,10 +52,6 @@ $sectionPaddingCompensation: 32px*2;
 
         @include flex(column, unset, flex-end);
         position: relative;
-
-        img {
-            border-radius: 32px;
-        }
 
     }
 
@@ -191,12 +188,14 @@ $sectionPaddingCompensation: 32px*2;
 
             .hero-title {
                 width: 100%;
+                max-width: min-content;
+                max-height: 250px;
                 height: unset;
             }
         }
         .hero-right {
             position: absolute;
-            bottom: $parrotYOffsetMobile * -1;
+            top: $parrotYOffsetMobile;
             right: $parrotXOffsetMobile * -1;
         }
         .hero-image {

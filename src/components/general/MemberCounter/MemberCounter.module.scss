@@ -1,0 +1,79 @@
+@import "../../../util/variables.scss";
+@import "../../../util/mixins.scss";
+
+.members-counter {
+
+    @include borderBox;
+    @include flex(column, space-between, flex-start);
+    
+    background: $colorRed;
+    color: white;
+    border-radius: 50px;
+    height: 320px;
+    width: 270px;
+    padding: 32px;
+    position: absolute;
+    bottom: -30px;
+    right: 226px;
+    overflow: hidden;
+
+
+    img, .members-counter-content {
+        z-index: 10;
+        user-select: none;
+    }
+
+    .members-counter-content {
+        
+        @include flex(column);
+
+        h4 {
+            @include fontWeightBold;
+            font-size: 20px;
+            line-height: 20px;
+        }
+    
+        h2 {
+            @include fontWeightBold;
+            font-size: 50px;
+            line-height: 80px;
+        }
+
+    }
+
+
+    &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100%;
+    }
+
+    &::before {
+        background: $colorAccent;
+        width: 200%;
+        aspect-ratio: 3/4;
+        bottom: 30%;
+        left: -100%;
+    }
+
+    &::after {
+        background: $colorSecondary;
+        width: 250%;
+        aspect-ratio: 1/1;
+        top: 45%;
+        left: -110%;
+    }
+
+}
+
+
+@media screen and (max-width: $mobileThreshold) {
+
+
+    .members-counter {
+        left: 18px;
+        top: 620px;
+    }
+
+}
