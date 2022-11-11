@@ -1,6 +1,16 @@
 @import "../../../util/variables.scss";
 @import "../../../util/mixins.scss";
 
+$staggerSpeed: 0.06s;
+
+$offsets: 0, 1, 2, 3, 4, 5;
+@each $offset in $offsets {
+    .offset-#{$offset} {
+        animation-delay: $staggerSpeed * $offset !important;
+    }
+}
+
+
 .navbar {
 
     @include flex(row, center);
@@ -30,6 +40,7 @@
         padding: 32px 0;
         margin: 0 32px;
         border-bottom: 4px solid $colorGreyHeading;
+        z-index: 1;
 
     }
 
@@ -56,12 +67,71 @@
 
 }
 
+.navbar-menu {
+
+    @include flex(column, space-between, stretch);
+    @include borderBox;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 70px 20px;
+    padding-top: 70px + 100px;
+    background: $colorLightBg;
+    pointer-events: none;
+
+    &.active {
+        pointer-events: all;
+
+        .navbar-content-section > * {
+            animation: navbarElementStagger 0.3s ease-out;
+            animation-fill-mode: both;
+        }
+
+    }
+
+    .navbar-content-section {
+
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+        align-items: stretch;
+
+        a {
+            font-size: 28px;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: $mobileThreshold) {
+    
+    .navbar.fixed {
+        backdrop-filter: none;
+        background: #fff;
+    }
+
+}
+
 
 @keyframes navbarFixedAppear {
     0% {
         translate: 0 -100px;
     }
     100% {
+        translate: 0;
+    }
+}
+
+@keyframes navbarElementStagger {
+    0% {
+        opacity: 0;
+        translate: 0 10px;
+    }
+    100% {
+        opacity: 1;
         translate: 0;
     }
 }

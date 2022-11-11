@@ -1,0 +1,62 @@
+@import "../../../util/variables.scss";
+
+$iconDrawSpeed: 0.1s;
+
+$offsets: 0, 1, 2;
+@each $offset in $offsets {
+    .offset-#{$offset} {
+        animation-delay: $iconDrawSpeed * $offset !important;
+    }
+}
+
+
+.menu-open, .menu-close {
+    stroke-dasharray: 22;
+}
+
+.menu-open > * {
+    animation: menuOpen 1s $smoothEaseOut;
+    animation-fill-mode: both;
+}
+.menu-close > * {
+    animation: menuClose 0.3s $smoothEaseIn;
+    animation-fill-mode: both;
+}
+
+.active {
+
+    .menu-open > * {
+        animation: menuClose 0.3s $smoothEaseIn;
+        animation-fill-mode: both;
+    }
+    .menu-close > * {
+        animation: menuOpen 1s $smoothEaseOut;
+        animation-fill-mode: both;
+    }
+
+}
+
+@keyframes menuOpen {
+
+    0% {
+        stroke-dashoffset: -22;
+    }
+    30% {
+        stroke-dashoffset: -22;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+@keyframes menuClose {
+
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 22;
+    }
+
+}

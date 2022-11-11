@@ -6,7 +6,8 @@ type ButtonProps = {
     text:    string,
     white?:  boolean,
     navbar?: boolean,
-    shrink?: boolean
+    shrink?: boolean,
+    className?: string
 }
 
 const Button = (props: ButtonProps) => {
@@ -14,7 +15,8 @@ const Button = (props: ButtonProps) => {
         classes.button, 
         props.white  ? classes['white'] : null,
         props.navbar ? classes['navbar-button'] : null,
-        props.shrink ? classes['shrink'] : null
+        props.shrink ? classes['shrink'] : null,
+        props.className
     ]);
 
     const stateHover = props.navbar ? { y: -1 } : {} 
