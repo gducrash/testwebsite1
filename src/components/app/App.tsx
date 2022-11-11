@@ -2,7 +2,7 @@ import AppNavbar from "./AppNavbar";
 
 import SectionHero from "../page/Section/SectionHero";
 import SectionMain from "../page/Section/SectionMain";
-import SectionScroll from "../page/Section/SectionScroll";
+import SectionSlider from "../page/Section/SectionSlider";
 
 import AppFooter from "./AppFooter";
 
@@ -14,7 +14,7 @@ function App() {
             <main>
                 <SectionHero />
                 <SectionMain />
-                <SectionScroll />
+                <SectionSlider />
             </main>
 
             <AppFooter />

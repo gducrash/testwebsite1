@@ -161,7 +161,7 @@ $sectionPaddingCompensation: 32px*2;
 
 }
 
-.section-scroll {
+.section-slider {
     @include flex(column, center, center, 32px);
     background: $colorBrightRed;
     padding: 100px 0;

@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import classes from './Section.module.scss';
 import Slider from '../../general/Slider/Slider';
 import { distanceFromZero } from '../../../scripts/util';
+import strings from '../../../util/strings';
 import SliderElement from '../../general/Slider/SliderElement';
-import { useState } from 'react';
 
 import imgWater   from '../../../assets/slider/water.png';
 import imgTrees   from '../../../assets/slider/trees.png';
@@ -11,39 +12,39 @@ import imgPlastic from '../../../assets/slider/plastic.png';
 import imgOrganic from '../../../assets/slider/organic.png';
 
 
-const scrollItems = [{
-    title: "Save walter",
-    content: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
+const items = [{
+    title: strings.SLIDER_HEADINGS[0],
+    content: strings.SLIDER_CONTENT,
     background: imgWater,
     bgVariation: 3, fgVariation: 4
 }, {
-    title: "Plant trees",
-    content: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
+    title: strings.SLIDER_HEADINGS[1],
+    content: strings.SLIDER_CONTENT,
     background: imgTrees,
     bgVariation: 5, fgVariation: 6
 }, {
-    title: "Save energy",
-    content: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
+    title: strings.SLIDER_HEADINGS[2],
+    content: strings.SLIDER_CONTENT,
     background: imgEnergy,
     bgVariation: 1, fgVariation: 2
 }, {
-    title: "Avoid plastic",
-    content: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
+    title: strings.SLIDER_HEADINGS[3],
+    content: strings.SLIDER_CONTENT,
     background: imgPlastic,
     bgVariation: 4, fgVariation: 5
 }, {
-    title: "Choose organic",
-    content: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
+    title: strings.SLIDER_HEADINGS[4],
+    content: strings.SLIDER_CONTENT,
     background: imgOrganic,
     bgVariation: 6, fgVariation: 3
 }];
 
-const SectionScroll = () => {
+const SectionSlider = () => {
 
     const [activeItem, setActiveItem] = useState(0);
 
     return (
-        <section className={classes["section-scroll"]} id="places">
+        <section className={classes["section-slider"]} id="places">
             <Slider 
                 desiredWidth={420}
                 onItemX={(x: number, elem: any) => {
@@ -52,7 +53,7 @@ const SectionScroll = () => {
                 }}
                 onChangeActive={setActiveItem}
             >
-                { scrollItems.map((m, i) =>
+                { items.map((m, i) =>
                     <SliderElement 
                         {...m} active={activeItem == i} key={i}
                     />
@@ -63,4 +64,4 @@ const SectionScroll = () => {
 
 }
 
-export default SectionScroll;
+export default SectionSlider;

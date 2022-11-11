@@ -44,6 +44,11 @@ const strings = {
         + "energy sources; to reduce the use of non-renewable resources"
     }],
 
+    SLIDER_HEADINGS: [
+        "Save walter", "Plant trees", "Save energy", "Avoid plastic", "Choose organic"
+    ],
+    SLIDER_CONTENT: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
+
     footer: [{
         heading: "Contacts",
         content: "2019 Rootz Foundation. \nAll rights reserved"
