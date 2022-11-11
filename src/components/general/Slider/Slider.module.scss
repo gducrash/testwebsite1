@@ -17,6 +17,9 @@
         @include flex(row, center);
         flex-shrink: 0;
         width: 80vw;
+        transition-property: scale, opacity;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-out;
     }
 
 }
