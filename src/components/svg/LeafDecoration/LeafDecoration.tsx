@@ -10,17 +10,22 @@ type LeafDecorationProps = {
 const LeafDecoration = (props: LeafDecorationProps) => {
 
     const [mouseOver, setMouseOver] = useState(false);
+    const [dead, setDead] = useState(false);
 
     return (
         <svg
             className={constructClass([
                 classes['body'],
                 mouseOver ? classes['over'] : null,
+                dead ? classes['dead'] : null,
                 props.className
             ])}
             onMouseEnter={() => {
                 setMouseOver(false);
                 setTimeout(() => setMouseOver(true), 100);
+            }}
+            onClick={() => {
+                setDead(true);
             }}
             width="61" height="96" viewBox="0 0 61 96" 
         >
@@ -31,6 +36,13 @@ const LeafDecoration = (props: LeafDecorationProps) => {
                 <path 
                     className={classes['leaf2']}
                     d={paths.LEAF_DECORATION[1]}  fill="#7675FD" />
+
+                <path 
+                    className={classes['leaf1dead']}
+                    d={paths.LEAF_TROLL_DECORATION[0]} fill="#555" />
+                <path 
+                    className={classes['leaf2dead']}
+                    d={paths.LEAF_TROLL_DECORATION[1]}  fill="#555" />
             </g>
         </svg>
     );

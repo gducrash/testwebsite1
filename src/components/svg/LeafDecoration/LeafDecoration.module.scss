@@ -2,6 +2,14 @@
 
     scale: 1.1;
 
+    .leaf1dead, .leaf2dead {
+        opacity: 0;
+    }
+
+    .leaf1, .leaf2, .leaf1dead, .leaf2dead {
+        transition: opacity 0.1s ease;
+    }
+
     &.over {
 
         .leaf1 {
@@ -13,6 +21,32 @@
             transform-origin: bottom left;
             animation: leaf2Hover 0.5s ease;
             animation-delay: 0.1s;
+        }
+
+    }
+
+    &.dead {
+
+        .leaf1, .leaf2 {
+            opacity: 0;
+        }
+
+        .leaf1dead, .leaf2dead {
+            opacity: 1;
+        }
+
+        .leaf1dead {
+            transform-origin: 42% 40%;
+            animation: leaf1Dead 1s ease;
+            animation-fill-mode: both;
+            animation-delay: 0.1s;
+        }
+
+        .leaf2dead {
+            transform-origin: 57% 93%;
+            animation: leaf2Dead 1s ease;
+            animation-fill-mode: both;
+            animation-delay: 0.3s;
         }
 
     }
@@ -46,5 +80,33 @@
     }
     100% {
         rotate: 0;
+    }
+}
+
+@keyframes leaf1Dead {
+    10% {
+        rotate: 0;
+    }
+    40% {
+        rotate: 170deg;
+    }
+    60% {
+        rotate: 160deg;
+    }
+    100% {
+        rotate: 165deg;
+    }
+}
+
+
+@keyframes leaf2Dead {
+    0% {
+        rotate: 0;
+    }
+    50% {
+        rotate: 110deg;
+    }
+    100% {
+        rotate: 100deg;
     }
 }
