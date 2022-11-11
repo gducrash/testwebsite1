@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { constructClass } from '../../../scripts/util';
 import classes from './Navbar.module.scss';
-
-import Button from '../../general/Button/Button';
 import useResponsive from '../../../hooks/useResponsive';
 import useScroll from '../../../hooks/useScroll';
+
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Button from '../../general/Button/Button';
 import MenuButton from '../../svg/MenuButton/MenuButton';
 
 import logo from '../../../assets/logo.svg';
