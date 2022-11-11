@@ -13,8 +13,8 @@
     width: 270px;
     padding: 32px;
     position: absolute;
-    bottom: -30px;
-    right: 226px;
+    right: $memberCardXOffsetDesktop;
+    bottom: $memberCardYOffsetDesktop * -1;
     overflow: hidden;
 
 
@@ -32,7 +32,6 @@
             font-size: 20px;
             line-height: 20px;
         }
-    
         h2 {
             @include fontWeightBold;
             font-size: 50px;
@@ -72,8 +71,29 @@
 
 
     .members-counter {
+
         left: 18px;
         top: 620px;
+        width: 216px;
+        height: 256px;
+        border-radius: 30px;
+        padding: 35px 30px;
+
+        img {
+            width: 32px;
+        }
+
+        .members-counter-content {
+            h4 {
+                font-size: 15px;
+            }
+            h2 {
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+
+
     }
 
 }
