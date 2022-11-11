@@ -19,6 +19,8 @@ const transition = {
     smooth: { type: 'spring', stiffness: 200, damping: 20, velocity: 0.1 }
 }
 
+let updating = false;
+
 const Slider = (props: SliderProps) => {
 
     // get the number of children 
@@ -94,24 +96,34 @@ const Slider = (props: SliderProps) => {
             // call the onItemX function with x
             // in the range from -1 to 1
             // where 0 is the center of the screen
-            const halfWidth = calcWidth()/2;
-            const xRel = (ref.current.getBoundingClientRect().x + halfWidth) * rel - 0.5;
+            if (props.onItemX) {
+                const halfWidth = calcWidth()/2;
+                const xRel = (ref.current.getBoundingClientRect().x + halfWidth) * rel - 0.5;
+                props.onItemX(xRel, ref.current);
+            }
             ref.current.style.translate = `${calcItemXShift(i)}px 0`;
-            if (props.onItemX) props.onItemX(xRel, ref.current);
         });
     }
 
     useResize(updateChildrenXStyle);
-    useAnimationFrame(updateChildrenXStyle);
+    useAnimationFrame(() => {
+        if (updating) updateChildrenXStyle();
+    });
 
     return (
         <>
-        <div className={classes["slider-wrapper"]} onResize={console.log}>
+        <motion.div 
+            className={classes["slider-wrapper"]} 
+            onViewportEnter={() => {
+                updating = true;
+                updateChildrenXStyle();
+            }}
+            onViewportLeave={() => updating = false}
+        >
             <motion.div
                 className={classes["slider-content"]}
                 drag="x" transition={trs}
                 animate={{ x: calcSliderX() }}
-                onViewportEnter={updateChildrenXStyle}
                 
                 // when spring anim is complete
                 // if the scrollIndex is out of bounds, wrap it back 
@@ -119,15 +131,18 @@ const Slider = (props: SliderProps) => {
                 // to avoid sudden moves
                 onAnimationComplete={() => {
                     if (scrollIndex != currentItem) {
-                        setScrollIndex(currentItem);
                         setAnimate(false);
+                        setScrollIndex(currentItem);
                     }
                 }}
 
                 // when started dragging, turn animations back on
                 // when finished dragging, update the current item
                 // and scroll index
-                onDragStart={() => setAnimate(true)}
+                onDragStart={() => {
+                    updating = true;
+                    setAnimate(true);
+                }}
                 onDragEnd={(_e, info) => {
                     const drag = info.offset.x * -1;
                     const itemOffset = Math.round(drag / calcWidth());
@@ -145,7 +160,7 @@ const Slider = (props: SliderProps) => {
                 ) }
 
             </motion.div>
-        </div>
+        </motion.div>
         
         <div className={classes["slider-controls"]}>
             <button onClick={() => scrollBy(-1)}>

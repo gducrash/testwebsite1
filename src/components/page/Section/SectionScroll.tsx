@@ -36,7 +36,7 @@ const scrollItems = [{
     content: "Taking on the issue of ensuring access to safe water requires worldwide effort.",
     background: imgOrganic,
     bgVariation: 6, fgVariation: 3
-}, ]
+}];
 
 const SectionScroll = () => {
 
@@ -54,7 +54,7 @@ const SectionScroll = () => {
             >
                 { scrollItems.map((m, i) =>
                     <SliderElement 
-                        {...m} active={activeItem == i}
+                        {...m} active={activeItem == i} key={i}
                     />
                 )}
             </Slider>
