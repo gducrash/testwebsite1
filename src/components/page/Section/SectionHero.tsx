@@ -1,5 +1,8 @@
 import classes from './Section.module.scss';
 import strings from '../../../util/strings';
+import useScroll from '../../../hooks/useScroll';
+import useResponsive from '../../../hooks/useResponsive';
+
 import SearchInput from '../../general/SearchInput/SearchInput';
 import ScrollTriggered from '../../general/ScrollTriggered/ScrollTriggered';
 import imgParrot from '../../../assets/parrot.svg';
@@ -7,6 +10,12 @@ import HeroTitle from '../../svg/HeroTitle/HeroTitle';
 import MemberCounter from '../../general/MemberCounter/MemberCounter';
 
 const SectionHero = () => {
+
+    const scroll = useScroll();
+    const isMobile = useResponsive(1110);
+    const isHeroVisible = scroll < 1200;
+    const counterCardDelay = isMobile ? 0 : 0.4;
+
 
     const animatedHeading = <ScrollTriggered delay={0.1}>
         <HeroTitle className={classes["hero-title"]} />
@@ -41,7 +50,10 @@ const SectionHero = () => {
                         
                     </div>
 
-                    <MemberCounter />
+                    <MemberCounter 
+                        targetCount={29128}  visible={isHeroVisible}
+                        delay={counterCardDelay}
+                    />
                 </div>
             </div>
 

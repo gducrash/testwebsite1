@@ -1,23 +1,43 @@
 import classes from './MemberCounter.module.scss';
-
-import icHealth from '../../../assets/icons/ic-health.svg';
+import { useMotionValue, useSpring } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { constructClass, formatCount } from '../../../scripts/util';
 import ScrollTriggered from '../ScrollTriggered/ScrollTriggered';
 
-type MemberCounterProps = {
+import icHealth from '../../../assets/icons/ic-health.svg';
 
+type MemberCounterProps = {
+    targetCount: number,
+    delay?: number,
+    visible?: boolean
 }
 
 export const MemberCounter = (props: MemberCounterProps) => {
 
+    const counterRef = useRef() as any;
+    const count = useMotionValue(props.targetCount * 0.5);
+    const animatedCount = useSpring(count, { stiffness: 50, damping: 20, bounce: 0 });
+
+    useEffect(() => {
+        const unsubscribe = animatedCount.onChange(c => {
+            counterRef.current.innerText = formatCount(c);
+        });
+        count.set(props.targetCount);
+        return unsubscribe;
+    }, []);
+
     return (
         <ScrollTriggered 
-            className={classes["members-counter"]} 
-            delay={0.4}
+            className={constructClass([
+                classes["members-counter"],
+                props.visible ? classes["visible"] : null
+            ])} 
+            delay={props.delay}
         >
             <img src={icHealth} alt="Member Counter Icon" draggable="false" />
             <div className={classes["members-counter-content"]}>
                 <h4>Members</h4>
-                <h2>29 128</h2>
+                <h2 ref={counterRef}>{ formatCount(props.targetCount) }</h2>
             </div>
         </ScrollTriggered>
     );
