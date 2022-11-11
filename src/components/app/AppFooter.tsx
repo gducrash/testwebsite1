@@ -4,9 +4,9 @@ import Footer from "../page/Footer/Footer";
 import FooterSection, { FooterHeadingType } from "../page/Footer/FooterSection";
 import FooterSocials from "../page/Footer/FooterSocials";
 
-import icTwitter from '../../assets/ic-twitter.svg';
-import icFacebook from '../../assets/ic-facebook.svg';
-import icLinkedIn from '../../assets/ic-linkedin.svg';
+import icTwitter from '../../assets/icons/ic-twitter.svg';
+import icFacebook from '../../assets/icons/ic-facebook.svg';
+import icLinkedIn from '../../assets/icons/ic-linkedin.svg';
 
 const AppFooter = () => {
     return (

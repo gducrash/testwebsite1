@@ -1,7 +1,7 @@
 import classes from './SearchInput.module.scss';
 import Button from '../Button/Button';
 
-import icLocation from '../../../assets/ic-location.svg';
+import icLocation from '../../../assets/icons/ic-location.svg';
 
 type SearchInputProps = {
     placeholder?: string

@@ -4,8 +4,8 @@ import classes from './Slider.module.scss';
 import { mod } from '../../../scripts/util';
 import useResize from '../../../hooks/useResize';
 
-import icBack    from '../../../assets/ic-back.svg';
-import icForward from '../../../assets/ic-forward.svg';
+import icBack    from '../../../assets/icons/ic-back.svg';
+import icForward from '../../../assets/icons/ic-forward.svg';
 
 type SliderProps = {
     desiredWidth: number,

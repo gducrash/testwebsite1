@@ -1,9 +1,10 @@
 import React, { MouseEventHandler } from 'react';
 import classes from './QuestionList.module.scss';
-
-import icExpand from '../../../assets/ic-expand.svg';
-import icCollapse from '../../../assets/ic-collapse.svg';
 import { constructClass } from '../../../scripts/util';
+
+import icExpand from '../../../assets/icons/ic-expand.svg';
+import icCollapse from '../../../assets/icons/ic-collapse.svg';
+
 
 type QuestionItemProps = {
     title: string,
