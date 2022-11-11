@@ -95,7 +95,8 @@
 
 .slider-controls {
 
-    @include flex(row, center, center, 40px);
+    @include flex(row, space-between, center, 40px);
+    width: 220px;
     color: #00000033;
 
     span {

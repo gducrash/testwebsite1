@@ -1,0 +1,46 @@
+.arrow-button {
+
+    .arrow-normal, .arrow-hint {
+        transition: translate 0.12s ease;
+    }
+
+    &:hover {
+        
+        .arrow-normal {
+            translate: 3px 0;
+        }
+
+        .arrow-hint {
+            translate: 10px 0;
+        }
+
+    }
+    
+    .active {
+
+        animation: arrowClick 0.32s ease;
+
+        .arrow-hint {
+            animation: arrowClickInner 0.32s ease;
+            animation-delay: 0.1s;
+        }
+
+    }
+
+}
+
+@keyframes arrowClick {
+
+    25% {
+        translate: 3px 0;
+    }
+
+}
+
+@keyframes arrowClickInner {
+
+    25% {
+        translate: 12px 0;
+    }
+
+}

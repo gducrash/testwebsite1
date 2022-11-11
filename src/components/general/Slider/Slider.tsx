@@ -6,6 +6,7 @@ import useResize from '../../../hooks/useResize';
 
 import icBack    from '../../../assets/icons/ic-back.svg';
 import icForward from '../../../assets/icons/ic-forward.svg';
+import ArrowButton from '../../svg/ArrowButton/ArrowButton';
 
 type SliderProps = {
     desiredWidth: number,
@@ -163,15 +164,11 @@ const Slider = (props: SliderProps) => {
         </motion.div>
         
         <div className={classes["slider-controls"]}>
-            <button onClick={() => scrollBy(-1)}>
-                <img src={icBack} alt="Back" draggable="false" />
-            </button>
+            <ArrowButton onClick={() => scrollBy(-1)} flipped />
             <p>
                 <span>{ currentItem + 1 }</span> / { itemCount }
             </p>
-            <button onClick={() => scrollBy(1)}>
-                <img src={icForward} alt="Forward" draggable="false" />
-            </button>
+            <ArrowButton onClick={() => scrollBy(1)} />
         </div>
         </>
     );
