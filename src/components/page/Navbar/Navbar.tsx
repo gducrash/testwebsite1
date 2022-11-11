@@ -20,7 +20,7 @@ type NavbarProps = {
 
 const menuVariants = {
     open: {
-        clipPath: `circle(110vh at 90% 50px)`
+        clipPath: `circle(117vh at 90% 50px)`
     },
     closed: {
         clipPath: "circle(0vh at 90% 50px)"
