@@ -188,10 +188,10 @@ $sectionPaddingCompensation: 32px*2;
 
             .hero-title {
                 width: 100%;
-                max-width: min-content;
+                max-width: max-content;
                 max-height: 250px;
-                min-width: 185px;
-                min-height: 100px;
+                min-width: 278px;
+                min-height: 150px;
                 height: unset;
             }
         }

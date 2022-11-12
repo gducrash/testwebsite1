@@ -33,7 +33,7 @@ const ArrowButton = (props: ArrowButtonProps) => {
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path className={classes["arrow-normal"]} d={paths.ARROW} />
-                <path className={classes["arrow-hint"]}   d={paths.ARROW} fill-opacity="0.2"/>
+                <path className={classes["arrow-hint"]}   d={paths.ARROW} fillOpacity="0.2"/>
             </svg>
         </IconButton>
     )
